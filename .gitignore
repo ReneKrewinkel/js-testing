@@ -42,7 +42,7 @@ build/Release
 # Dependency directories
 node_modules/
 state-vs-interaction/node_modules/
-
+state-vs-interaction/yarn.lock
 
 jspm_packages/
 
