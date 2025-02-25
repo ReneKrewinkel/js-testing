@@ -6,7 +6,7 @@
 
 # Release Notes
 
-Copyright © 2020 / 2023 **\_\_krewinkel**
+Copyright © 2020 / 2025 **\_\_krewinkel**
 
 **Rene Krewinkel**  
 mail: <a href='mailto:rene@krewinkel.nl'>rene@krewinkel.nl</a>  
