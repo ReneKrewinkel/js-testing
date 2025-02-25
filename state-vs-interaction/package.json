@@ -1,0 +1,15 @@
+{
+  "name": "state-vs-interaction",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "license": "ISC",
+  "author": "Rene Krewinkel",
+  "main": "userService.js",
+  "scripts": {
+    "test": "vitest --run --reporter verbose"
+  },
+  "dependencies": {
+    "vitest": "^3.0.7"
+  }
+}
