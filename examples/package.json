@@ -1,15 +1,17 @@
 {
-    "name": "state-vs-interaction",
+    "name": "examples",
     "version": "1.0.0",
-    "description": "",
+    "main": "promise.js",
     "type": "module",
-    "license": "ISC",
-    "author": "Rene Krewinkel",
-    "main": "userService.js",
     "scripts": {
         "test": "vitest --run --reporter verbose"
     },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
     "dependencies": {
         "vitest": "^3.0.7"
-    }
+    },
+    "devDependencies": {},
+    "description": ""
 }

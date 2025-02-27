@@ -1,0 +1,26 @@
+{
+    "name": "js-testing",
+    "version": "1.0.0",
+    "description": "## This repository contains the basic projects for the training _JavaScript Testing_.",
+    "main": "index.js",
+    "scripts": {
+        "test": "vitest --run --reporter verbose",
+        "nice": "prettier -w ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ReneKrewinkel/js-testing.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "bugs": {
+        "url": "https://github.com/ReneKrewinkel/js-testing/issues"
+    },
+    "homepage": "https://github.com/ReneKrewinkel/js-testing#readme",
+    "dependencies": {
+        "jsdom": "^26.0.0",
+        "vitest": "^3.0.7"
+    }
+}

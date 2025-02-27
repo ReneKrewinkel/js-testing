@@ -1,16 +1,16 @@
-import  { vi, it, expect }  from 'vitest'
+import { vi, it, expect } from 'vitest'
 
 const user = {
-  getName: () => "Alice",
+    getName: () => 'Alice'
 }
 
-it("spies on getName method", () => {
-  const spy = vi.spyOn(user, "getName")
+it('spies on getName method', () => {
+    const spy = vi.spyOn(user, 'getName')
 
-  user.getName() // Call the function
+    user.getName() // Call the function
 
-  expect(spy).toHaveBeenCalled() // Verify it was called
-  expect(spy).toHaveReturnedWith("Alice") // Check return value
+    expect(spy).toHaveBeenCalled() // Verify it was called
+    expect(spy).toHaveReturnedWith('Alice') // Check return value
 
-  spy.mockRestore() // Restore original function (important!)
+    spy.mockRestore() // Restore original function (important!)
 })

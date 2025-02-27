@@ -1,43 +1,42 @@
-import { extractNumbers } from './src/parser.js';
-import {
-  validateStringNotEmpty,
-  validateNumber,
-} from './src/util/validation.js';
-import { add } from './src/math.js';
-import { transformToNumber } from './src/util/numbers.js';
+import { extractNumbers } from './src/parser.js'
+import { validateStringNotEmpty, validateNumber } from './src/util/validation.js'
+import { add } from './src/math.js'
+import { JSDOM } from 'jsdom'
 
-const form = document.querySelector('form');
-const output = document.getElementById('result');
+import { transformToNumber } from './src/util/numbers.js'
 
-function formSubmitHandler(event) {
-  event.preventDefault();
-  const formData = new FormData(form);
-  const numberInputs = extractNumbers(formData);
+const form = document.querySelector('form')
+const output = document.getElementById('result')
 
-  let result = '';
-  
-  try {
-    const numbers = [];
-    for (const numberInput of numberInputs) {
-      validateStringNotEmpty(numberInput);
-      const number = transformToNumber(numberInput);
-      validateNumber(number);
-      numbers.push(number);
+export function formSubmitHandler(event) {
+    event.preventDefault()
+    const formData = new FormData(form)
+    const numberInputs = extractNumbers(formData)
+
+    let result = ''
+
+    try {
+        const numbers = []
+        for (const numberInput of numberInputs) {
+            validateStringNotEmpty(numberInput)
+            const number = transformToNumber(numberInput)
+            validateNumber(number)
+            numbers.push(number)
+        }
+        result = add(numbers).toString()
+    } catch (error) {
+        result = error.message
     }
-    result = add(numbers).toString();
-  } catch (error) {
-    result = error.message;
-  }
 
-  let resultText = '';
+    let resultText = ''
 
-  if (result === 'invalid') {
-    resultText = 'Invalid input. You must enter valid numbers.';
-  } else if (result !== 'no-calc') {
-    resultText = 'Result: ' + result;
-  }
+    if (result === 'invalid') {
+        resultText = 'Invalid input. You must enter valid numbers.'
+    } else if (result !== 'no-calc') {
+        resultText = 'Result: ' + result
+    }
 
-  output.textContent = resultText;
+    output.textContent = resultText
 }
 
-form.addEventListener('submit', formSubmitHandler);
+form.addEventListener('submit', formSubmitHandler)
