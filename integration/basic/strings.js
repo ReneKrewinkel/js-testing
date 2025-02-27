@@ -3,6 +3,7 @@ export const trimString = (str) => {
 }
 
 export const capitalizeString = (str) => {
+    console.log('echte functie')
     return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()
 }
 

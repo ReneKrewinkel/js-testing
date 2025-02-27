@@ -14,10 +14,6 @@ describe('UserService', () => {
     vi.spyOn(mockDatabase, 'insertUser')
   })
 
-  // afterEach: Clean up any mocks after each test
-  afterEach(() => {
-    vi.restoreAllMocks()
-  })
 
   it('should fetch a user by ID', async () => {
     // Arrange: Set up mock data and behavior
@@ -44,6 +40,8 @@ describe('UserService', () => {
 
     // Act: Call the method under test
     const result = await userService.createUser(newUser)
+
+    console.log(result)
 
     // Assert: Verify the result
     expect(result).toEqual(createdUser)

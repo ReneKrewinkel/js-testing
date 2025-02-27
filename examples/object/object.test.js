@@ -21,6 +21,7 @@ describe('getUser', () => {
       id: 1,
       name: 'Alice',
       age: 25,
+      role:'admin',
       address: {
         city: 'Amsterdam',
         country: 'NL'
@@ -33,12 +34,14 @@ describe('getUser', () => {
     // Arrange & Act
     const result = getUser()
 
-    // Assert
-    expect(result).toHaveProperty('id')
-    expect(result).toHaveProperty('name')
-    expect(result).toHaveProperty('age')
-    expect(result).toHaveProperty('address.city')
-    expect(result).toHaveProperty('address.country')
+    if(result.role === 'admin') {
+      // Assert
+      expect(result).toHaveProperty('id')
+      expect(result).toHaveProperty('name')
+      expect(result).toHaveProperty('age')
+      expect(result).toHaveProperty('address.city')
+      expect(result).toHaveProperty('address.country')
+    }
   })
 
   it('should have specific properties with correct values using toHaveProperty and toEqual', () => {

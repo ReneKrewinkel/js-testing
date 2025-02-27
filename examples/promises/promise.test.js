@@ -21,7 +21,7 @@ describe('delayedPromise function tests', () => {
     it('should return a promise with a value and a delay', async () => {
         // Arrange
         const expectedValue = 'world'
-        const delay = 100
+        const delay = 2000
 
         // Act & Assert
         await expect(delayedPromise(expectedValue, delay)).resolves.toBe(expectedValue)
@@ -30,7 +30,7 @@ describe('delayedPromise function tests', () => {
     it('should return a promise with a value and a delay using async/await', async () => {
         // Arrange
         const expectedValue = 'async-await'
-        const delay = 100
+        const delay = 2000
 
         // Act
         const result = await delayedPromise(expectedValue, delay)
@@ -41,8 +41,17 @@ describe('delayedPromise function tests', () => {
 
     it('should return a promise with a value and a delay using async/await and resolves', async () => {
         // Arrange
-        const expectedValue = 'resolves'
-        const delay = 100
+        const expectedValue = 'xxx'
+        const delay = 1000
+
+        // Act & Assert
+        await expect(delayedPromise(expectedValue, delay)).resolves.toBe(expectedValue)
+    })
+
+    it('should return a promise with a value and a delay using async/await and resolves', async () => {
+        // Arrange
+        const expectedValue = 'yyy'
+        const delay = 1000
 
         // Act & Assert
         await expect(delayedPromise(expectedValue, delay)).resolves.toBe(expectedValue)
@@ -50,7 +59,7 @@ describe('delayedPromise function tests', () => {
 
     it('should return a promise with a value and a delay using async/await and rejects', async () => {
         // Arrange
-        const delay = 100
+        const delay = 1000
 
         // Act & Assert
         await expect(delayedPromise(null, delay, true)).rejects.toThrow('Promise rejected')

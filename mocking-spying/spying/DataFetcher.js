@@ -5,5 +5,8 @@ export class DataFetcher {
   }
 
 
-export const sum = (a, b) => a + b
+export const sum = (a, b) => {
+  console.log('echte functie')
+ return a * b
+}
   

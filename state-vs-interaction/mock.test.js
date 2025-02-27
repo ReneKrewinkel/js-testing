@@ -7,6 +7,7 @@ vi.mock('./api', () => ({
 
 it('executed a mocking API call', async () => {
     const data = await getUserData()
+    console.log(data)
     expect(data).toBe('mock data') // Uses mocked response
     expect(getUserData).toHaveBeenCalled()
 })

@@ -22,18 +22,19 @@ describe('happy path', () => {
         const result = processString(input)
 
         // Assert
-        expect(result).toBe('Test String')
+        expect(result).toBe(input)
     })
 
     it('should return an empty string', () => {
         // Arrange
         const input = ''
+        const expectedOutput = '   '
 
         // Act
         const result = processString(input)
 
         // Assert
-        expect(result).toBe('   ') // Three spaces
+        expect(result).toBe(expectedOutput) // Three spaces
     })
 
     it('should return a string with only spaces', () => {

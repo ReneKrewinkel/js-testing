@@ -5,6 +5,7 @@ export class UserService {
     }
   
     async getUserById(id) {
+      console.log('echte function getUserById')
       const user = await this.database.findUserById(id);
       return user;
     }
